@@ -1,4 +1,4 @@
-![output_4_1](https://github.com/user-attachments/assets/a2d248b5-625d-4780-950e-e091d16fa889)![output_4_1](https://github.com/user-attachments/assets/bc7cb122-b53a-419b-a0fd-551ddf0301ba)![output_4_1](https://github.com/user-attachments/assets/89f0fe71-ee7b-4183-a6cf-1ff5adf209f6)![output_4_1](https://github.com/user-attachments/assets/416097a4-28ec-44c0-8024-944a61125879)![output_4_1](https://github.com/user-attachments/assets/c0860af4-8e6a-4728-8d47-fe6fdb92541d)![output_4_1](https://github.com/user-attachments/assets/384a95b4-5196-475d-8d62-9caf9e400651)# ipcvcodepython
+# ipcvcodepython
 I am learning image processing and computer vision. This is a simple project from me.
 #Install and import required packages:
 pip install pillow
