@@ -188,17 +188,17 @@ import cv2
 from PIL import Image, ImageDraw, ImageFont
 import os
 
-print("🔍 شروع برنامه...")
+print(" شروع برنامه...")
 
 # خواندن تصویر
 image_path = "C:\\Users\\NoteBook\\Desktop\\JI230816Cosmos220-6d9254f-edited-scaled.jpg"
 image = cv2.imread(image_path)
 
 if image is None:
-    print("❌ تصویر بارگذاری نشد! مسیر را بررسی کنید.")
+    print(" تصویر بارگذاری نشد! مسیر را بررسی کنید.")
     exit()
 
-print("✅ تصویر با موفقیت بارگذاری شد.")
+print("تصویر با موفقیت بارگذاری شد.")
 
 
 image_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
@@ -218,27 +218,27 @@ try:
     font_path = r"C:\Windows\Fonts\arial.ttf"
     font = ImageFont.truetype(font_path, 50)
     draw.text((left, upper - 50), "box", font=font, fill="red")
-    print("✅ متن اضافه شد.")
+    print(" متن اضافه شد.")
 except Exception as e:
-    print(f"⚠️ خطا در بارگذاری فونت: {e}")
+    print(f" خطا در بارگذاری فونت: {e}")
 
 
 image_draw.show()  # نمایش تصویر
-print("📷 تصویر نمایش داده شد.")
+print("تصویر نمایش داده شد.")
 
 
 save_path = "C:\\Users\\Public\\image_with_box.jpg"
 try:
     image_draw.save(save_path)  # ذخیره تصویر
-    print(f"✅ تصویر ذخیره شد: {save_path}")
+    print(f"تصویر ذخیره شد: {save_path}")
 except Exception as e:
-    print(f"❌ خطا در ذخیره تصویر: {e}")
+    print(f" خطا در ذخیره تصویر: {e}")
 
 
 if os.path.exists(save_path):
-    print(f"✅ فایل در مسیر ذخیره شده است: {save_path}")
+    print(f"فایل در مسیر ذخیره شده است: {save_path}")
 else:
-    print("❌ تصویر ذخیره نشد!")
+    print("تصویر ذخیره نشد!")
 
 
 ![Shot 0015](https://github.com/user-attachments/assets/8bfcffbe-381f-472c-9e65-28cebf3e3715)
