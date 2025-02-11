@@ -190,7 +190,7 @@ import os
 
 print("🔍 شروع برنامه...")
 
-# read a picture
+# خواندن تصویر
 image_path = "C:\\Users\\NoteBook\\Desktop\\JI230816Cosmos220-6d9254f-edited-scaled.jpg"
 image = cv2.imread(image_path)
 
@@ -200,20 +200,20 @@ if image is None:
 
 print("✅ تصویر با موفقیت بارگذاری شد.")
 
-# convert to RGB
+
 image_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 image_pil = Image.fromarray(image_rgb)
 
-# Prepare for draw
+
 image_draw = image_pil.copy()  # اینجا متغیر image_draw تعریف می‌شود
 draw = ImageDraw.Draw(image_draw)
 
-# draw red rectangle
+
 left, upper, right, lower = 150, 150, 400, 400
 shape = [left, upper, right, lower]
 draw.rectangle(xy=shape, outline="red", width=5)
 
-# add text
+
 try:
     font_path = r"C:\Windows\Fonts\arial.ttf"
     font = ImageFont.truetype(font_path, 50)
@@ -222,11 +222,11 @@ try:
 except Exception as e:
     print(f"⚠️ خطا در بارگذاری فونت: {e}")
 
-#show picture
+
 image_draw.show()  # نمایش تصویر
 print("📷 تصویر نمایش داده شد.")
 
-# save picture
+
 save_path = "C:\\Users\\Public\\image_with_box.jpg"
 try:
     image_draw.save(save_path)  # ذخیره تصویر
@@ -234,11 +234,16 @@ try:
 except Exception as e:
     print(f"❌ خطا در ذخیره تصویر: {e}")
 
-# did it save?
+
 if os.path.exists(save_path):
     print(f"✅ فایل در مسیر ذخیره شده است: {save_path}")
 else:
     print("❌ تصویر ذخیره نشد!")
+
+
+![Shot 0015](https://github.com/user-attachments/assets/8bfcffbe-381f-472c-9e65-28cebf3e3715)
+
+
 
 
 
