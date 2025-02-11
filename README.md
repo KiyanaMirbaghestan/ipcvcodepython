@@ -246,5 +246,80 @@ else:
 
 
 
+####Now I want to put one picture in another.
+
+
+import numpy as np
+from PIL import Image
+
+# بارگذاری تصاویر با OpenCV
+image_path = "C:\\Users\\NoteBook\\Desktop\\JI230816Cosmos220-6d9254f-edited-scaled.jpg"  # تصویر اصلی
+crop_image_path = "C:\\Users\\NoteBook\\Desktop\\images.jpg"  # تصویر برش داده شده
+
+# بارگذاری تصاویر با OpenCV
+import cv2
+imagee_lenna = cv2.imread(image_path)
+crop_image = cv2.imread(crop_image_path)
+
+if imagee_lenna is None or crop_image is None:
+    print(" یکی از تصاویر به درستی بارگذاری نشد. مسیر را بررسی کنید.")
+else:
+    # تبدیل numpy.ndarray به PIL.Image
+    imagee_lenna_pil = Image.fromarray(cv2.cvtColor(imagee_lenna, cv2.COLOR_BGR2RGB))
+    crop_image_pil = Image.fromarray(cv2.cvtColor(crop_image, cv2.COLOR_BGR2RGB))
+
+    # قرار دادن تصویر برش داده شده روی تصویر اصلی
+    left, upper = 150, 150
+    imagee_lenna_pil.paste(crop_image_pil, box=(left, upper))
+
+    # نمایش تصویر نهایی
+    imagee_lenna_pil.show()
+
+    # ذخیره تصویر نهایی
+    output_path = "C:\\Users\\Public\\output_image.jpg"
+    imagee_lenna_pil.save(output_path)
+    print(f" تصویر با موفقیت ذخیره شد: {output_path}")
+
+
+![Shot 0016](https://github.com/user-attachments/assets/4f6d75fb-179d-4bea-b3f5-0367356646ff)
+
+
+
+#We now use opencv to do this
+
+import cv2
+import numpy as np
+
+# بارگذاری تصویر با استفاده از OpenCV
+image_path = r"C:\Users\NoteBook\Desktop\JI230816Cosmos220-6d9254f-edited-scaled.jpg"  # استفاده از r قبل از رشته برای مسیر
+image = cv2.imread(image_path)
+
+if image is None:
+    print(" تصویر بارگذاری نشد.")
+else:
+    print(" تصویر با موفقیت بارگذاری شد.")
+
+    # کپی تصویر
+    image_draw = np.copy(image)
+
+    # مختصات برای رسم مستطیل
+    left = 150
+    upper = 150
+    right = 400
+    lower = 400
+    start_point, end_point = (left, upper), (right, lower)
+
+    # رسم مستطیل روی تصویر
+    cv2.rectangle(image_draw, start_point, end_point, (0, 0, 255), 3)  # رنگ قرمز (BGR) و ضخامت 3
+
+    # نمایش تصویر
+    cv2.imshow("Image with Rectangle", image_draw)
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
+
+
+
+    
+
 
 ##############################This project will continue............
